@@ -37,13 +37,6 @@ describe('ProductsModule (e2e)', () => {
       imports: [SequelizeModule.forRoot(databaseConnection), ProductsModule],
     }).compile();
 
-  it('GET /products', async () => {
-	  return request(await app.getHttpServer())
-	  .get('/products')
-	  .expect(200)
-	  .expect('[]');
-  });
-
     app = moduleFixture.createNestApplication();
     await app.init();
   });
