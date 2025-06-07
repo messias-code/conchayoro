@@ -30,7 +30,8 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - run: docker build -t $MODULE_FULLNAME $MODULE_NAME
+      - run: docker build -t $MODULE_FULLNAME .
+
 
       - run: |
           docker tag $MODULE_FULLNAME:$TAG \
